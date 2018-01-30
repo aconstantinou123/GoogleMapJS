@@ -7,9 +7,7 @@ var initialize = function () {
         content: "This is London" });
     var mainMap = new MapWrapper(container, center, 10);
     var firstMarker = mainMap.addMarker(center);
-    firstMarker.addListener('click', function () {
-        infowindow.open(mainMap.googleMap, firstMarker);
-    });
+    mainMap.addInfoWindow(firstMarker);
     mainMap.addMarker(shoreditch);
     mainMap.addMarker(chesterfieldGardens);
     mainMap.addClickEvent();

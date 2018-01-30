@@ -23,13 +23,14 @@ MapWrapper.prototype.bounceMarkers = function () {
     })
 }
 
-// MapWrapper.prototype.addInfoWindow = function (marker) {
-//         var infoWindow = new google.maps.InfoWindow({
-//             content: "This is london"
-//         })
-//         infoWindow.open(this.googleMap, marker);
-//         console.log('Click');
-// }
+MapWrapper.prototype.addInfoWindow = function (marker) {
+        marker.addListener('click', function () {
+            var infoWindow = new google.maps.InfoWindow({
+                content: "This is london"
+            })
+            infoWindow.open(this.googleMap, marker);
+    });
+}
 
 MapWrapper.prototype.addClickEvent = function () {
     google.maps.event.addListener(this.googleMap, 'click', function(event){
