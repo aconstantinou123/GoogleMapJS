@@ -41,7 +41,18 @@ MapWrapper.prototype.addClickEvent = function () {
 
 MapWrapper.prototype.goToChicago = function () {
         console.log(this.googleMap.getCenter());
-        this.googleMap.setCenter({lat: 41.8781, lng: -87.6298});
-        this.googleMap.setZoom(10);
+        var chicago = {lat: 41.8781, lng: -87.6298};
+        this.googleMap.setCenter(chicago);
+        this.addMarker(chicago);
         console.log('Method Called')
+}
+
+MapWrapper.prototype.currentLocation = function () {
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var currentCoords = {lat: position.coords.latitude, lng: position.coords.longitude};
+            this.googleMap.setCenter(currentCoords);
+            this.addMarker(currentCoords)
+        }.bind(this));
+    }
 }

@@ -17,6 +17,8 @@ var initialize = function () {
     bounceButton.addEventListener('click', mainMap.bounceMarkers.bind(mainMap));
     var chicagoButton = document.getElementById('set-chicago');
     chicagoButton.addEventListener('click', mainMap.goToChicago.bind(mainMap));
+    var currentPositionButton = document.getElementById('current-position');
+    currentPositionButton.addEventListener('click', mainMap.currentLocation.bind(mainMap));
 }
 
 window.addEventListener('load', initialize);
