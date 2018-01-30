@@ -3,8 +3,6 @@ var initialize = function () {
     var center = {lat: 51.507351, lng: -0.127758};
     var shoreditch = {lat: 51.528490, lng: -0.084728}
     var chesterfieldGardens = {lat: 51.579779, lng: -0.099005}
-    var infowindow = new google.maps.InfoWindow({
-        content: "This is London" });
     var mainMap = new MapWrapper(container, center, 10);
     var firstMarker = mainMap.addMarker(center);
     mainMap.addInfoWindow(firstMarker);

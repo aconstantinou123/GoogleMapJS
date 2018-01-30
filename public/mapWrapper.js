@@ -41,11 +41,9 @@ MapWrapper.prototype.addClickEvent = function () {
 }
 
 MapWrapper.prototype.goToChicago = function () {
-        console.log(this.googleMap.getCenter());
         var chicago = {lat: 41.8781, lng: -87.6298};
         this.googleMap.setCenter(chicago);
         this.addMarker(chicago);
-        console.log('Method Called')
 }
 
 MapWrapper.prototype.currentLocation = function () {
